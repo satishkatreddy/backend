@@ -32,8 +32,6 @@ const userSchema = new schema({
         type: Boolean,
          default: true
     }
-      
-
 }, {timestamps: true})
 
 userSchema.methods.isPasswordMatched = async function (enteredPassword) {
