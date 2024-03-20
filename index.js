@@ -4,6 +4,7 @@ const {config} = require('dotenv');
 const connectionDb = require('../backend/utils/database');
 const todo = require('../backend/routers/todo');
 const users = require('../backend/routers/user');
+const cors = require('cors');
 const app = express();
 
 
@@ -14,6 +15,7 @@ connectionDb();
 
 //middleWare
 app.use(express.json());
+app.use(cors());
 app.use('/api/toDo', todo);
 app.use('/api/users', users);
 
